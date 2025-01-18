@@ -39,6 +39,11 @@ final bankAccounts = [
   bankAccountShinhan1,
   bankAccountShinhan2,
   bankAccountShinhan3,
+  bankAccountShinhan1,
+  bankAccountShinhan2,
+  bankAccountShinhan3,
+  bankAccountToss,
+  bankAccountKakao,
   bankAccountToss,
   bankAccountKakao,
 ];
