@@ -1,6 +1,7 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_arrow.dart';
 import 'package:fast_app_base/common/widget/w_rounded_container.dart';
+import 'package:fast_app_base/screen/main/tab/stock/w_interest_stock.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widget/w_long_button.dart';
@@ -44,43 +45,48 @@ class MyStockFragment extends StatelessWidget {
         ),
       );
 
-  Container getMyStock(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        color: context.appColors.roundedLayoutBackground,
-        child: Column(
-          children: [
-            heigth30,
-            Tap(
-              onTap: (){
-                context.showSnackbar('관심주식');
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  '관심주식'.text.bold.make(),
-                  '편집하기'.text.color(context.appColors.lessImport).make(),
-                ],
-              ),
-            ),
-            heigth20,
-            Tap(
-              onTap: (){
-                context.showSnackbar('기본');
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    '기본'.text.bold.make(),
-                    Arrow(
-                      direction: AxisDirection.up,
-                    )
-                  ],
+  Column getMyStock(BuildContext context) => Column(
+    children: [
+      Container(
+            color: context.appColors.roundedLayoutBackground,
+            child: Column(
+              children: [
+                heigth30,
+                Tap(
+                  onTap: (){
+                    context.showSnackbar('관심주식');
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      '관심주식'.text.bold.make(),
+                      '편집하기'.text.color(context.appColors.lessImport).make(),
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
-        ),
-      );
+                heigth20,
+                Tap(
+                  onTap: (){
+                    context.showSnackbar('기본');
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        '기본'.text.bold.make(),
+                        Arrow(
+                          direction: AxisDirection.up,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+      InterestStockList().pSymmetric(h: 10),
+    ],
+  );
 }
